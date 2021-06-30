@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="PLWPF.TesterSignIn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="back" Color="White" Opacity="0.8">
+        </SolidColorBrush>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/IMAGE/FT 1461.jpg" Stretch="UniformToFill" Opacity="0.5"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content=" הקודם &gt;" Grid.Row="0" Grid.Column="4" Margin="0,3,3,2.6" FontSize="20" FontWeight="SemiBold" Click="Button_Click"  HorizontalAlignment="Right" Width="174">
+            <Button.Background>
+                <SolidColorBrush Color="White" Opacity="0.8"/>
+            </Button.Background>
+        </Button>
+        <TextBlock Text=":התחבר כבוחן" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"  TextAlignment="Center" Padding="13" Margin="0,7" FontWeight="ExtraBold" FontSize="30">
+            <TextBlock.Background>
+                <SolidColorBrush Color="GhostWhite" Opacity="0.2"/>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock Text=":תעודת זהות" Grid.Column="3" Grid.Row="2" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" TextAlignment="Justify"/>
+        <TextBlock Text=":סיסמא" Grid.Column="3" Grid.Row="4" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" TextAlignment="Center" />
+
+        <TextBox x:Name="id" Grid.Column="2" Grid.Row="2" FontSize="25" TextAlignment="Left"  Margin="-60,0,0,0" />
+        <PasswordBox x:Name="password" Grid.Column="2" Grid.Row="4" FontSize="25"  Margin="-60,0,0,0" Password=""/>
+        <Button Content="התחבר" Grid.Row="5" Grid.Column="2" FontSize="25" FontWeight="SemiBold" ContentStringFormat="" Margin="-30,50" Background="{StaticResource back}" Click="connect">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=id, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=pass, Path=ContentStringFormat}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
+    </Grid>
+</UserControl>

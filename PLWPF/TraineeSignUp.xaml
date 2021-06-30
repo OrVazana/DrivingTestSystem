@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="PLWPF.TraineeSignUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="back" Color="GhostWhite" Opacity="0.3"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/IMAGE/FT 1461.jpg" Stretch="UniformToFill" Opacity="0.5"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content=" הקודם &gt;" Grid.Row="0" Grid.Column="9" FontSize="20" FontWeight="SemiBold" Click="Back" Margin="38.2,3,3,7.6" Grid.ColumnSpan="3">
+            <Button.Background>
+                <SolidColorBrush Color="White" Opacity="0.8"/>
+            </Button.Background>
+        </Button>
+
+
+        <TextBlock Text=":שם פרטי " TextAlignment="Right" Grid.Column="10" Grid.Row="1" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}"  />
+        <TextBlock Text=":שם משפחה " TextAlignment="Right" Grid.Column="10" Grid.Row="3" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":תעודת זהות" TextAlignment="Right" Grid.Column="10" Grid.Row="5" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}"/>
+        <TextBlock Text=":תאריך לידה" TextAlignment="Right" Grid.Column="10" Grid.Row="7" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}"/>
+        <TextBlock Text=":מין" TextAlignment="Right" Grid.Column="10" Grid.Row="9" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back}"/>
+        <TextBlock Text=":מספר טלפון" TextAlignment="Right" Grid.Column="7" Grid.Row="1" FontSize="18" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":עיר" TextAlignment="Right" Grid.Column="7" Grid.Row="3" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":רחוב" TextAlignment="Right" Grid.Column="7" Grid.Row="5" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":מספר בית" TextAlignment="Right" Grid.Column="7" Grid.Row="7" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":סוג הילוכים" TextAlignment="Right" Grid.Column="7" Grid.Row="9" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text="בית ספר&#x0a;:לנהיגה" TextAlignment="Right" Grid.Column="4" Grid.Row="1" FontSize="13" FontWeight="ExtraBold" Background="{StaticResource back}" />
+        <TextBlock Text="מספר&#x0a;:שיעורים" TextAlignment="Right" Grid.Column="4" Grid.Row="3" FontSize="14" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":סוג רכב" TextAlignment="Right" Grid.Column="4" Grid.Row="5" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+        <TextBlock Text=":סיסמא " TextAlignment="Right" Grid.Column="10" Grid.Row="11" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+
+
+        <TextBox x:Name="name" Grid.Column="9" Grid.Row="1" FontSize="25" TextAlignment="Left" />
+        <TextBox x:Name="family" Grid.Column="9" Grid.Row="3" FontSize="25" TextAlignment="Left"/>
+        <TextBox x:Name="ID" Grid.Column="9" Grid.Row="5" FontSize="25" TextAlignment="Left"/>
+        <DatePicker x:Name="Birth" Grid.Column="9" Grid.Row="7"/>
+        <TextBox x:Name="phone" Grid.Column="6" Grid.Row="1" FontSize="25" TextAlignment="Left"/>
+        <TextBox x:Name="city" Grid.Column="6" Grid.Row="3" FontSize="25" TextAlignment="Left"/>
+        <TextBox x:Name="street" Grid.Column="6" Grid.Row="5"  FontSize="25" TextAlignment="Left"/>
+        <TextBox x:Name="houseN" Grid.Column="6" Grid.Row="7" FontSize="25" TextAlignment="Left" />
+        <TextBox x:Name="driveSchool" Grid.Column="3" Grid.Row="1"  FontSize="25" TextAlignment="Left"/>
+        <TextBox x:Name="Lessons" Grid.Column="3" Grid.Row="3"  FontSize="25" TextAlignment="Left"/>
+        <TextBox x:Name="Password" Grid.Column="9" Grid.Row="11" FontSize="25" TextAlignment="Left"/>
+
+
+        <ComboBox x:Name="gender" Grid.Row="9" Grid.Column="9" />
+        <ComboBox x:Name="transmission" Grid.Row="9" Grid.Column="6" />
+        <ComboBox x:Name="vehicle" Grid.Row="5" Grid.Column="3"/>
+        <Button x:Name="next" Content="הוסף" Margin="3,3,3,3" Grid.ColumnSpan="3" FontSize="20" FontWeight="SemiBold" Click="ADD" >
+            <Button.Background>
+                <SolidColorBrush Color="White" Opacity="0.8"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=name, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=family, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=ID, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=Birth, Path=Date}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=phone, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=gender, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=street, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=houseN, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=driveSchool, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=Lessons, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=Password, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=vehicle, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=transmission, Path=Text}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
+
+</UserControl>

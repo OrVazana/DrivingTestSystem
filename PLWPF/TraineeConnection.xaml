@@ -1,0 +1,358 @@
+﻿<UserControl x:Class="PLWPF.TraineeConnection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="back" Color="GhostWhite" Opacity="0.5"/>
+        <SolidColorBrush x:Key="back1" Color="White" Opacity="0.6"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/IMAGE/FT 1461.jpg" Stretch="UniformToFill" Opacity="0.5"/>
+            </Grid.Background>
+            <TabControl Background="Transparent">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Width="148">
+                            <Image Source="/IMAGE/green.png" Height="15" Width="50"/>
+                            <TextBlock Text="כללי" Foreground="Green"  FontWeight="SemiBold" Width="50" TextAlignment="Center" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid x:Name="Rgrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="27*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="66*"/>
+                            <ColumnDefinition Width="66*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="120*"/>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="120*"/>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="120*"/>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text=":שם פרטי " TextAlignment="Right" Grid.Column="10" Grid.Row="1" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}"  />
+                        <TextBlock Text=":שם משפחה " TextAlignment="Right" Grid.Column="10" Grid.Row="3" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}" />
+                        <TextBlock Text=":תעודת זהות" TextAlignment="Right" Grid.Column="10" Grid.Row="5" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}"/>
+                        <TextBlock Text=":תאריך לידה" TextAlignment="Right" Grid.Column="10" Grid.Row="7" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}"/>
+                        <TextBlock Text=":מין" TextAlignment="Right" Grid.Column="10" Grid.Row="9" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back1}"/>
+                        <TextBlock Text=":מספר טלפון" TextAlignment="Right" Grid.Column="7" Grid.Row="1" FontSize="18" FontWeight="SemiBold" Background="{StaticResource back1}" />
+                        <TextBlock Text=":עיר" TextAlignment="Right" Grid.Column="7" Grid.Row="3" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back1}" />
+                        <TextBlock Text=":רחוב" TextAlignment="Right" Grid.Column="7" Grid.Row="5" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back1}" />
+                        <TextBlock Text=":מספר בית" TextAlignment="Right" Grid.Column="7" Grid.Row="7" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}" />
+                        <TextBlock Text=":סוג הילוכים" TextAlignment="Right" Grid.Column="7" Grid.Row="9" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}" />
+                        <TextBlock Text="בית ספר&#x0a;:לנהיגה" TextAlignment="Right" Grid.Column="4" Grid.Row="1" FontSize="13" FontWeight="ExtraBold" Background="{StaticResource back1}" />
+                        <TextBlock Text="מספר&#x0a;:שיעורים" TextAlignment="Right" Grid.Column="4" Grid.Row="3" FontSize="13" FontWeight="ExtraBold" Background="{StaticResource back1}" />
+                        <TextBlock Text=":סוג רכב" TextAlignment="Right" Grid.Column="4" Grid.Row="5" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back1}" />
+
+
+                        <TextBlock x:Name="Rname" Text="{Binding Path=FirstName}" Grid.Column="9" Grid.Row="1" FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="Rfamily" Text="{Binding Path=LastName}" Grid.Column="9" Grid.Row="3" FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="RID" Text="{Binding Path=Id}" Grid.Column="9" Grid.Row="5" FontSize="20" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="RBirth" Text="{Binding Path=Birth, StringFormat=d}" Grid.Column="9" Grid.Row="7" FontSize="15" TextAlignment="Left" Background="{StaticResource back}" />
+                        <TextBlock x:Name="Rphone" Text="{Binding Path=PhoneNumber}" Grid.Column="6" Grid.Row="1" FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="Rcity" Text="{Binding Path=Address.City}" Grid.Column="6" Grid.Row="3" FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="Rstreet" Text="{Binding Path=Address.Street}" Grid.Column="6" Grid.Row="5" FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="RhouseN" Text="{Binding Path=Address.HomeNum}" Grid.Column="6" Grid.Row="7" FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="RdriveSchool"  Text="{Binding Path=DriveSchool}" Grid.Column="3" Grid.Row="1"  FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+                        <TextBlock x:Name="Rlessons" Text="{Binding Path=NumLesson}" Grid.Column="3" Grid.Row="3"  FontSize="25" TextAlignment="Left" Background="{StaticResource back}"/>
+
+
+                        <TextBlock x:Name="Rgender" Text="{Binding Path=gender}" Grid.Row="9" Grid.Column="9" Background="{StaticResource back}"  FontSize="25" TextAlignment="Left" />
+                        <TextBlock x:Name="Rtransmission" Text="{Binding Path=Transmission}" Grid.Row="9" Grid.Column="6" Background="{StaticResource back}"  FontSize="25" TextAlignment="Left" />
+                        <TextBlock x:Name="Rvehicle" Text="{Binding Path=VehicleType}" Grid.Row="5" Grid.Column="3" Background="{StaticResource back}"  FontSize="20" TextAlignment="Left"/>
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Width="148">
+                            <Image Source="/IMAGE/blue.png" Height="15" Width="50"/>
+                            <TextBlock Text="עדכון פרטים" Foreground="DeepSkyBlue" FontWeight="SemiBold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="27*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="18*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="66*"/>
+                            <ColumnDefinition Width="66*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="120*"/>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="120*"/>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="120*"/>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text=":שם פרטי " TextAlignment="Right" Grid.Column="10" Grid.Row="1" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}"  />
+                        <TextBlock Text=":שם משפחה " TextAlignment="Right" Grid.Column="10" Grid.Row="3" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":מספר טלפון" TextAlignment="Right" Grid.Column="7" Grid.Row="1" FontSize="18" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":עיר" TextAlignment="Right" Grid.Column="7" Grid.Row="3" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":רחוב" TextAlignment="Right" Grid.Column="7" Grid.Row="5" FontSize="25" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":מספר בית" TextAlignment="Right" Grid.Column="7" Grid.Row="7" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":סוג הילוכים" TextAlignment="Right" Grid.Column="10" Grid.Row="7" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text="בית ספר&#x0a;:לנהיגה" TextAlignment="Right" Grid.Column="4" Grid.Row="1" FontSize="13" FontWeight="ExtraBold" Background="{StaticResource back}" />
+                        <TextBlock Text="מספר&#x0a;:שיעורים" TextAlignment="Right" Grid.Column="4" Grid.Row="3" FontSize="13" FontWeight="ExtraBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":סוג רכב" TextAlignment="Right" Grid.Column="4" Grid.Row="5" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+                        <TextBlock Text=":סיסמא " TextAlignment="Right" Grid.Column="10" Grid.Row="5" FontSize="20" FontWeight="SemiBold" Background="{StaticResource back}" />
+
+                        <TextBox x:Name="name" Grid.Column="9" Grid.Row="1" FontSize="25" TextAlignment="Left" />
+                        <TextBox x:Name="family" Grid.Column="9" Grid.Row="3" FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="phone" Grid.Column="6" Grid.Row="1" FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="city" Grid.Column="6" Grid.Row="3" FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="street" Grid.Column="6" Grid.Row="5" FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="houseN" Grid.Column="6" Grid.Row="7" FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="driveSchool" Grid.Column="3" Grid.Row="1"  FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="lessons" Grid.Column="3" Grid.Row="3"  FontSize="25" TextAlignment="Left"/>
+                        <TextBox x:Name="Password" Grid.Column="9" Grid.Row="5" FontSize="25" TextAlignment="Left"/>
+
+                        <ComboBox x:Name="transmission" Grid.Row="7" Grid.Column="9" />
+                        <ComboBox x:Name="vehicle" Grid.Row="5" Grid.Column="3"/>
+                        <Button x:Name="next" Content="עדכן" Margin="3,3,3,3" Grid.ColumnSpan="3" FontSize="20" FontWeight="SemiBold" Click="UPDATE" >
+                            <Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.8"/>
+                            </Button.Background>
+
+                        </Button>
+                    </Grid>
+                </TabItem>
+
+
+
+
+                <TabItem Name="sign_test_tab">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Width="148">
+                            <Image Source="/IMAGE/yellow.png" Height="15" Width="50"/>
+                            <TextBlock Text="מבחן" Foreground="Orange" TextAlignment="Center" FontWeight="SemiBold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabControl Background="Transparent">
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Width="251">
+                                    <Image Source="/IMAGE/gold.png" Height="15" Width="90"/>
+                                    <TextBlock Text="הרשמה למבחן"  Foreground="Goldenrod" TextAlignment="Center"  VerticalAlignment="Stretch" FontWeight="SemiBold" />
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="27*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="66*"/>
+                                    <ColumnDefinition Width="66*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                    <ColumnDefinition Width="125*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                    <ColumnDefinition Width="125*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                    <ColumnDefinition Width="125*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="date1" Text=":תאריף מועדף" TextAlignment="Right" Visibility="Visible" Grid.Column="6" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="35"  FontWeight="SemiBold" Background="{StaticResource back}" />
+                                <TextBlock Name="housr1" Text=":שעה מועדפת" TextAlignment="Right" Visibility="Visible"  Grid.Column="6" Grid.RowSpan="2" Grid.Row="4" Grid.ColumnSpan="2" FontSize="35"  FontWeight="SemiBold" Background="{StaticResource back}"/>
+
+                                <DatePicker x:Name="date" Grid.Column="4" Visibility="Visible" Grid.Row="1" FontSize="30" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch"/>
+
+                                <ComboBox x:Name="hours" Grid.Row="4" Grid.Column="4" Visibility="Visible" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontSize="30"/>
+
+                                <Button x:Name="b" Grid.Column="1" Grid.Row="9" Visibility="Visible" Grid.RowSpan="2" Content="צור מבחן" Margin="3,3,3,3" Grid.ColumnSpan="3" FontSize="20" FontWeight="SemiBold" Click="TEST" >
+                                    <Button.Background>
+                                        <SolidColorBrush Color="White" Opacity="0.8"/>
+                                    </Button.Background>
+                                    <Button.Style>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=date, Path=SelectedDate}" Value="">
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ElementName=hours, Path=Text}" Value="">
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+
+                                <TextBlock x:Name="succses" FontWeight="SemiBold" FontSize="60" TextAlignment="Center" Grid.Row="3" Grid.Column="0" Visibility="Hidden" Grid.ColumnSpan="8" Grid.RowSpan="4" Background="{StaticResource back}" />
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Name="update_test_tab" IsEnabled="False">
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Width="251">
+                                    <Image Source="/IMAGE/seaBlue.png" Height="15" Width="110"/>
+                                    <TextBlock Text="עדכון מבחן" Foreground="SteelBlue" TextAlignment="Center"  VerticalAlignment="Stretch" FontWeight="SemiBold" />
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="27*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="18*"/>
+                                    <RowDefinition Height="5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="66*"/>
+                                    <ColumnDefinition Width="66*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                    <ColumnDefinition Width="125*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                    <ColumnDefinition Width="125*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                    <ColumnDefinition Width="125*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="UP_date1" Text=":תאריף מועדף" TextAlignment="Right" Visibility="Visible" Grid.Column="6" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="35"  FontWeight="SemiBold" Background="{StaticResource back}" />
+                                <TextBlock Name="UP_housr1" Text=":שעה מועדפת" TextAlignment="Right" Visibility="Visible"  Grid.Column="6" Grid.RowSpan="2" Grid.Row="4" Grid.ColumnSpan="2" FontSize="35"  FontWeight="SemiBold" Background="{StaticResource back}"/>
+
+                                <DatePicker x:Name="UP_date" Grid.Column="4" Visibility="Visible" Grid.Row="1" FontSize="30" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch"/>
+
+                                <ComboBox x:Name="UP_hours" Grid.Row="4" Grid.Column="4" Visibility="Visible" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontSize="30"/>
+
+                                <Button x:Name="UP_b" Grid.Column="1" Grid.Row="9" Visibility="Visible" Grid.RowSpan="2" Content="עדכן מבחן" Margin="3,3,3,3" Grid.ColumnSpan="3" FontSize="20" FontWeight="SemiBold" Click="UPDATE_TEST" >
+                                    <Button.Background>
+                                        <SolidColorBrush Color="White" Opacity="0.8"/>
+                                    </Button.Background>
+                                    <Button.Style>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=UP_date, Path=SelectedDate}" Value="">
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ElementName=UP_hours, Path=Text}" Value="">
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+
+                            </Grid>
+
+
+                        </TabItem>
+                        
+                        
+                        <TabItem Name="grade_tab" IsEnabled="False">
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal" Width="251">
+                                    <Image Source="/IMAGE/purple.png" Height="15" Width="120"/>
+                                    <TextBlock Text="ציון" Foreground="Purple" TextAlignment="Center" VerticalAlignment="Stretch" FontWeight="SemiBold" />
+                                </StackPanel>
+                            </TabItem.Header>
+                            <TextBlock x:Name="grade1" Text="" FontWeight="SemiBold" FontSize="60" TextAlignment="Center" Background="{StaticResource back}" Margin="0,100,0,140" />
+
+                        </TabItem>
+                    </TabControl>
+
+                </TabItem>
+
+
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Width="148">
+                            <Image Source="/IMAGE/red.png" Height="15" Width="50"/>
+                            <TextBlock Text="מחיקת משתמש" Foreground="red" FontWeight="SemiBold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Button Content="מחק" Foreground="Black" FontWeight="SemiBold" Grid.Row="1" Margin="300,30" Click="Delete">
+                            <Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.8"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" Width="144">
+                            <Image Source="/IMAGE/DarkRed.png" Height="15" Width="50"/>
+                            <TextBlock Text="התנתקות" Foreground="DarkRed" FontWeight="SemiBold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Button Content="התנתק" Foreground="Black" FontWeight="SemiBold" Grid.Row="1" Margin="300,30" Click="logOut" >
+                            <Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.8"/>
+                            </Button.Background>
+                        </Button>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>
